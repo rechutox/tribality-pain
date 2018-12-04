@@ -1,0 +1,277 @@
+/* ************************************************************************* */
+
+:root {
+  --line-color: #ccf;
+  --secondary-color: #348;
+}
+
+/* ************************************************************************* */
+
+@page
+{
+    size: auto;   /* auto is the initial value */
+    /* this affects the margin in the printer settings */
+    margin: 12mm 10mm 20mm 10mm;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6  {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.has-border-left {
+  border-left: 1px dashed var(--line-color);
+}
+
+.fa-circled {
+  width: 30px;
+  line-height: 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* ************************************************************************* */
+
+@media screen {
+  #page {
+    padding: 2rem 8rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #page {
+    padding: 5px;
+  }
+}
+
+/* ************************************************************************* */
+
+#header {
+  margin-bottom: 10px;
+  border-left: 30px solid var(--secondary-color);
+  border-top-left-radius: 8px;
+  padding-left: 6px;
+  position: relative;
+}
+
+#header::before {
+  display: block;
+  content: "";
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  left: -1px;
+  width: auto;
+  height: auto;
+  border-color: transparent;
+  border-left-color: var(--secondary-color);
+  border-style: solid;
+  border-width: 10px;
+  border-left-width: 10px;
+}
+
+#header h1 {
+  font-size: 30px;
+  line-height: 34px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+#header h2 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+/* ************************************************************************* */
+
+.tree h1 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  margin: 0;
+  position: relative;
+}
+
+.tree > h1::before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 15px;
+  top: 0px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--line-color);
+}
+
+.tree > h1:first-child::before {
+  left: 15px;
+  top: 50%;
+  height: 50%;
+}
+
+.tree div {
+  position: relative;
+  padding-left: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-left: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-left: 2px solid var(--line-color);
+  font-size: 14px;
+}
+
+.tree div::before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 9px;
+  border-radius: 12px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--secondary-color);
+}
+
+.tree div.smallpad {
+  padding-bottom: 0px;
+}
+
+.tree div h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+.tree div h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  /* padding-bottom: 5px; */
+}
+
+.tree div h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  font-style: italic;
+}
+
+.tree div h1 small {
+  font-size: 14px;
+}
+
+
+.tree div ul {
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 20px;
+}
+
+
+/* ************************************************************************* */
+
+.slot div {
+  font-size: 14px;
+}
+.slot ul {
+  font-size: 14px;
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 30px;
+}
+.slot h1 {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.slot h1 .fas,
+.slot h1 .far,
+.slot h1 .fab {
+  width: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+.slot dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.slot dt {
+  font-size: 14px;
+  font-weight: bold;
+}
+.slot dt .fas,
+.slot dt .far,
+.slot dt .fa-circled,
+.slot dt .fab {
+  width: 30px;
+}
+.slot dd {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.slot dl.has-icon dd {
+  padding-left: 35px;
+}
+.slot dl.is-spaced dt {
+  margin-top: 10px;
+}
+.slot dl.is-spaced dd {
+  margin-top: 5px;
+}
+
+.slot + .slot {
+  border-top: 1px dashed var(--line-color);
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.slot dt .stars .fas,
+.slot dt .stars .fab,
+.slot dt .stars .far {
+  width: auto;
+  color: var(--secondary-color);
+}
+
+.slot.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slot img {
+  max-width: 200px;
+  /* margin: 10px; */
+  border-radius: 200px;
+}
